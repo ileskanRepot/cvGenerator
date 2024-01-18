@@ -1,0 +1,98 @@
+{
+	"cv": {
+		"sideBar": [
+			{ "title": "Contact",
+				"values": [
+					{ "value": "ileska@tutanota.com", "type": "text" }
+				]
+			},
+			{ "title": "Links",
+				"values": [
+					{ "value": "ileska.fi", "type": "link", "link": "https://ileska.fi" },
+					{ "value": "ileska.luntti.net", "type": "link", "link": "https://ileska.luntti.net" },
+					{ "value": "github.com", "type": "link", "link": "https://github.com/ileskanRepot" }
+				]
+			},
+			{ "title": "Top skills",
+				"values": [
+					{ "value": "Linux", "type": "text" },
+					{ "value": "Python (Programming Language)", "type": "text" },
+					{ "value": "C (Programming Language)", "type": "text" }
+				]
+			},
+			{ "title": "Languages",
+				"values": [
+					{ "value": "English (Limited Working)", "type": "text" },
+					{ "value": "Finnish (Native or Bilingual)", "type": "text" },
+					{ "value": "Swedish (Elementary)", "type": "text" },
+					{ "value": "Estonian (Elementary)", "type": "text" }
+				]
+			},
+			{ "title": "Honors And Awards",
+				"values": [
+					{ "value": "Junction hackathon 2022", "type": "text" },
+					{ "value": "Scholarship for excellence in mathematics", "type": "text" },
+					{ "value": "6th Cassini hackathon", "type": "text" }
+				]
+			}
+		],
+		"mainPage": {
+			"details": {
+				"name": "Akseli Leino",
+				"profession": "Student at Aalto University"
+			},
+			"background": [
+				{ "title": "Experience",
+					"values": [
+						{ 
+							"place": "Aalto University Automation and Systematics Guild",
+							"label": "Tinkering committee member",
+							"description": "Aalto University Automation and Systematics Guild IT (Tinkering) Committee. Looking after the guild's IT and playing with cool toys (We have your robot hand at our full disposal).",
+							"start": "Jan. 2023",
+							"end": "Current"
+						},
+						{ 
+							"place": "RELEX Solutions",
+							"label": "Software Developer",
+							"description": "Backend programming in Haskell and studying API password managing.",
+							"start": "Jun. 2022",
+							"end": "Aug. 2022"
+						},
+						{ 
+							"place": "Päivölä Student Innovation Lab",
+							"label": "Software Developer",
+							"description": "IOT and game programming. 12h per week.",
+							"start": "Aug. 2020",
+							"end": "May. 2022"
+						}
+					]
+				},
+				{ "title": "Education",
+					"values": [
+						{ 
+							"place": "Aalto University",
+							"label": "Bachelor and Master degree in Autmation and Robotics",
+							"description": "Bachelor and Master degree in Autmation and Robotics",
+							"start": "Aug. 2022",
+							"end": "Jun. 2027"
+						},
+						{ 
+							"place": "Päivölän kansanopisto",
+							"label": "studying maths and computer science/coding",
+							"description": "Boarding school with an emphasis on maths",
+							"start": "Jul. 2020",
+							"end": "Jun. 2022"
+						},
+						{ 
+							"place": "Tietotien lukio, Valkeakoski",
+							"label": "Hichschool diploma",
+							"description": "Matriculation Examination 6/6, General Highschool Studies",
+							"start": "Jul. 2020",
+							"end": "Jun. 2022"
+						}
+					]
+				}
+			]
+		}
+	}
+}
