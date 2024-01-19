@@ -1,34 +1,35 @@
 {
 	"cv": {
 		"sideBar": [
-			{ "title": "Contact",
+			{ "title": { "value": "Contact", "type": "text" },
 				"values": [
-					{ "value": "ileska@tutanota.com", "type": "text" }
+					{ "value": "ileska@tutanota.com", "type": "text" },
+					{ "value": "+358 40 9333 705", "type": "text" }
 				]
 			},
-			{ "title": "Links",
+			{ "title": { "value": "Links", "type": "text" },
 				"values": [
 					{ "value": "ileska.fi", "type": "link", "link": "https://ileska.fi" },
 					{ "value": "ileska.luntti.net", "type": "link", "link": "https://ileska.luntti.net" },
 					{ "value": "github.com", "type": "link", "link": "https://github.com/ileskanRepot" }
 				]
 			},
-			{ "title": "Top skills",
+			{ "title": { "value": "Top skills", "type": "text" },
 				"values": [
-					{ "value": "Linux", "type": "text" },
-					{ "value": "Python (Programming Language)", "type": "text" },
-					{ "value": "C (Programming Language)", "type": "text" }
+					{ "value": "Linux, Docker, Git", "type": "text" },
+					{ "value": "Python, C/C++, Scala", "type": "text" },
+					{ "value": "Cyber Security", "type": "link", "link": "https://challenge.fi/" }
 				]
 			},
-			{ "title": "Languages",
+			{ "title": { "value": "Languages", "type": "text" },
 				"values": [
-					{ "value": "English (Limited Working)", "type": "text" },
 					{ "value": "Finnish (Native or Bilingual)", "type": "text" },
+					{ "value": "English (Professional working)", "type": "text" },
 					{ "value": "Swedish (Elementary)", "type": "text" },
 					{ "value": "Estonian (Elementary)", "type": "text" }
 				]
 			},
-			{ "title": "Honors And Awards",
+			{ "title": { "value": "Honors And Awards", "type": "text" },
 				"values": [
 					{ "value": "Junction hackathon 2022", "type": "text" },
 					{ "value": "Scholarship for excellence in mathematics", "type": "text" },
@@ -38,57 +39,55 @@
 		],
 		"mainPage": {
 			"details": {
-				"name": "Akseli Leino",
-				"profession": "Student at Aalto University"
+				"name": { "value": "Akseli Leino", "type": "text" },
+				"profession": { "value": "Student at Aalto University", "type": "text" }
 			},
 			"background": [
-				{ "title": "Experience",
+				{ "title": { "value": "Experience", "type": "text" },
 					"values": [
 						{ 
-							"place": "Aalto University Automation and Systematics Guild",
-							"label": "Tinkering committee member",
-							"description": "Aalto University Automation and Systematics Guild IT (Tinkering) Committee. Looking after the guild's IT and playing with cool toys (We have your robot hand at our full disposal).",
-							"start": "Jan. 2023",
-							"end": "Current"
+							"place": { "value": "RELEX Solutions", "type": "text" },
+							"label": { "value": "Software Developer", "type": "text" },
+							"description": { "value": "Backend programming in Haskell and studying API password managing.", "type": "text" },
+							"duration": { "value": "(Jun. 2022 - Aug. 2022)", "type": "text" }
 						},
 						{ 
-							"place": "RELEX Solutions",
-							"label": "Software Developer",
-							"description": "Backend programming in Haskell and studying API password managing.",
-							"start": "Jun. 2022",
-							"end": "Aug. 2022"
-						},
-						{ 
-							"place": "Päivölä Student Innovation Lab",
-							"label": "Software Developer",
-							"description": "IOT and game programming. 12h per week.",
-							"start": "Aug. 2020",
-							"end": "May. 2022"
+							"place": { "value": "Päivölä Student Innovation Lab", "type": "text" },
+							"label": { "value": "Software Developer", "type": "text" },
+							"description": { "value": "IOT and game programming. 12h per week.", "type": "text" },
+							"duration": { "value": "(Aug. 2020 - May. 2022)", "type": "text" }
 						}
 					]
 				},
-				{ "title": "Education",
+				{ "title": { "value": "Education", "type": "text" },
 					"values": [
 						{ 
-							"place": "Aalto University",
-							"label": "Bachelor and Master degree in Autmation and Robotics",
-							"description": "Bachelor and Master degree in Autmation and Robotics",
-							"start": "Aug. 2022",
-							"end": "Jun. 2027"
+							"place": { "value": "Aalto University", "type": "text" },
+							"label": { "value": "Bachelor and Master degree in Autmation and Robotics", "type": "text" },
+							"description": { "value": "Bachelor and Master degree in Autmation and Robotics", "type": "text" },
+							"duration": { "value": "(Aug. 2022 - Current)", "type": "text" }
 						},
 						{ 
-							"place": "Päivölän kansanopisto",
-							"label": "studying maths and computer science/coding",
-							"description": "Boarding school with an emphasis on maths",
-							"start": "Jul. 2020",
-							"end": "Jun. 2022"
+							"place": { "value": "Päivölän kansanopisto", "type": "text" },
+							"label": { "value": "Studying maths and computer science/coding", "type": "text" },
+							"description": { "value": "Boarding school with an emphasis on maths", "type": "text" },
+							"duration": { "value": "(Jul. 2020 - Jun. 2022)", "type": "text" }
 						},
 						{ 
-							"place": "Tietotien lukio, Valkeakoski",
-							"label": "Hichschool diploma",
-							"description": "Matriculation Examination 6/6, General Highschool Studies",
-							"start": "Jul. 2020",
-							"end": "Jun. 2022"
+							"place": { "value": "Tietotien lukio, Valkeakoski", "type": "text" },
+							"label": { "value": "Hichschool diploma", "type": "text" },
+							"description": { "value": "Matriculation Examination 6/6, General Highschool Studies", "type": "text" },
+							"duration": { "value": "(Jul. 2020 - Jun. 2022)", "type": "text" }
+						}
+					]
+				},
+				{ "title": { "value": "Volunteering", "type": "text" },
+					"values": [
+						{
+							"place": { "value": "Aalto University Automation and Systematics Guild", "type": "text" },
+							"label": { "value": "Tinkering committee member", "type": "text" },
+							"description": { "value": "Aalto University Automation and Systematics Guild IT (Tinkering) Committee. Looking after the guild's IT and playing with cool toys (We have your robot hand at our full disposal).", "type": "text" },
+							"duration": { "value": "(Jan. 2023 - Current)", "type": "text" }
 						}
 					]
 				}
