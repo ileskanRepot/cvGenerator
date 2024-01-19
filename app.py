@@ -165,7 +165,8 @@ def createPdf(data):
 
 	width, height = A4
 
-	drawLeftSideBar(cc, sidebarWidth, colors.darkslategray)
+	# drawLeftSideBar(cc, sidebarWidth, colors.darkslategray)
+	drawLeftSideBar(cc, sidebarWidth, colors.purple)
 	writeSideBarText(cc, sidebarWidth, data)
 	drawMainPage(cc, sidebarWidth, data)
 	
