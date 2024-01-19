@@ -11,7 +11,8 @@
 				"values": [
 					{ "value": "ileska.fi", "type": "link", "link": "https://ileska.fi" },
 					{ "value": "ileska.luntti.net", "type": "link", "link": "https://ileska.luntti.net" },
-					{ "value": "github.com", "type": "link", "link": "https://github.com/ileskanRepot" }
+					{ "value": "github.com/ileskanRepot", "type": "link", "link": "https://github.com/ileskanRepot" },
+					{ "value": "linkedin.com/in/ileska", "type": "link", "link": "https://www.linkedin.com/in/ileska/" }
 				]
 			},
 			{ "title": { "value": "Top skills", "type": "text" },
