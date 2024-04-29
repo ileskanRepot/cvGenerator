@@ -1,9 +1,12 @@
 {
 	"cv": {
 		"sideBar": [
+			{ "title": { "width": 140, "height": 186,"path": "./facePic.jpeg", "type": "image" },"values":[]},
 			{ "title": { "value": "Contact", "type": "text" },
 				"values": [
-					{ "value": "ileska@tutanota.com", "type": "text" },
+					{ "value": "akseli.leino@aalto.fi", "type": "text" },
+					{ "value": "akseli@ileska.fi", "type": "text" },
+					{ "value": "linkedin.com/in/ileska", "type": "link", "link": "https://www.linkedin.com/in/ileska/" },
 					{ "value": "+358 40 9333 705", "type": "text" }
 				]
 			},
@@ -11,8 +14,7 @@
 				"values": [
 					{ "value": "ileska.fi", "type": "link", "link": "https://ileska.fi" },
 					{ "value": "ileska.luntti.net", "type": "link", "link": "https://ileska.luntti.net" },
-					{ "value": "github.com/ileskanRepot", "type": "link", "link": "https://github.com/ileskanRepot" },
-					{ "value": "linkedin.com/in/ileska", "type": "link", "link": "https://www.linkedin.com/in/ileska/" }
+					{ "value": "github.com/ileskanRepot", "type": "link", "link": "https://github.com/ileskanRepot" }
 				]
 			},
 			{ "title": { "value": "Top skills", "type": "text" },
@@ -32,9 +34,16 @@
 			},
 			{ "title": { "value": "Honors And Awards", "type": "text" },
 				"values": [
-					{ "value": "Junction hackathon 2022", "type": "text" },
-					{ "value": "Scholarship for excellence in mathematics", "type": "text" },
-					{ "value": "6th Cassini hackathon", "type": "text" }
+					{ "value": "6th Cassini hackathon (1st in Estonia, 2nd in Europe), 2023", "type": "text" },
+					{ "value": "Junction hackathon (3rd in Eager's Challenge), 2022", "type": "text" },
+					{ "value": "Scholarship for excellence in mathematics, 2021", "type": "text" }
+				]
+			},
+			{ "title": { "value": "Sports", "type": "text" },
+				"values": [
+					{ "value": "Track&Field (Race walking)", "type": "text" },
+					{ "value": "Field Hockey", "type": "text" },
+					{ "value": "Trekking", "type": "text" }
 				]
 			}
 		],
@@ -64,31 +73,31 @@
 					"values": [
 						{ 
 							"place": { "value": "Aalto University", "type": "text" },
-							"label": { "value": "Bachelor and Master degree in Autmation and Robotics", "type": "text" },
-							"description": { "value": "Bachelor and Master degree in Autmation and Robotics", "type": "text" },
+							"label": { "value": "Bachelor's and Master's degree", "type": "text" },
+							"description": { "value": "Major in Automation and Robotics and minor in Computer Science", "type": "text" },
 							"duration": { "value": "(Aug. 2022 - Current)", "type": "text" }
 						},
 						{ 
-							"place": { "value": "Päivölän kansanopisto", "type": "text" },
-							"label": { "value": "Studying maths and computer science/coding", "type": "text" },
-							"description": { "value": "Boarding school with an emphasis on maths", "type": "text" },
-							"duration": { "value": "(Jul. 2020 - Jun. 2022)", "type": "text" }
-						},
-						{ 
-							"place": { "value": "Tietotien lukio, Valkeakoski", "type": "text" },
-							"label": { "value": "Hichschool diploma", "type": "text" },
-							"description": { "value": "Matriculation Examination 6/6, General Highschool Studies", "type": "text" },
+							"place": { "value": "Tietotien lukio / Päivölän kansanopisto, Valkeakoski", "type": "text" },
+							"label": { "value": "General Highschool Studies", "type": "text" },
+							"description": { "value": "Boarding school with emphasis on math and computer science/coding", "type": "text" },
 							"duration": { "value": "(Jul. 2020 - Jun. 2022)", "type": "text" }
 						}
 					]
 				},
-				{ "title": { "value": "Volunteering", "type": "text" },
+				{ "title": { "value": "Recreational", "type": "text" },
 					"values": [
 						{
 							"place": { "value": "Aalto University Automation and Systematics Guild", "type": "text" },
 							"label": { "value": "Tinkering committee member", "type": "text" },
 							"description": { "value": "Aalto University Automation and Systematics Guild IT (Tinkering) Committee. Looking after the guild's IT and playing with cool toys (We have your robot hand at our full disposal).", "type": "text" },
 							"duration": { "value": "(Jan. 2023 - Current)", "type": "text" }
+						},
+						{
+							"place": { "value": "Finland ECSC Team", "type": "text" },
+							"label": { "value": "Alternate member", "type": "text" },
+							"description": { "value": "Participant in Fi national team of ctf competition", "type": "text" },
+							"duration": { "value": "(Jul. 2023 - Nov. 2023)", "type": "text" }
 						}
 					]
 				}

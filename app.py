@@ -27,11 +27,9 @@ def getStringWithCorrectWidth(string, size, startW, endW, font):
 
 	return ret
 
-def writeSplittedText(cc, textArea, font, fontSize, startHor, endHor, startVert):
+def writeSplittedText(cc, text, font, fontSize, startHor, endHor, startVert):
 	height = A4[1]
 	cc.setFont(font, fontSize)
-
-	text = textArea["value"]
 
 	splittedText = getStringWithCorrectWidth(text, fontSize, startHor, endHor, font)
 	offset = startVert
@@ -39,10 +37,38 @@ def writeSplittedText(cc, textArea, font, fontSize, startHor, endHor, startVert)
 		cc.drawString(startHor, height - offset, line)
 		offset += fontSize
 
-	if textArea["type"] == "link":
+	return offset
+
+def writeSplittedObject(cc, textArea, font, fontSize, startHor, endHor, startVert):
+	height = A4[1]
+	cc.setFont(font, fontSize)
+
+
+	offset = startVert
+
+	if textArea["type"] == "text":
+		text = textArea["value"]
+		offset = writeSplittedText(cc, text, font, fontSize, startHor, endHor, startVert)
+
+	elif textArea["type"] == "image":
+		path = textArea["path"]
+		ww = textArea["width"]
+		hh = textArea["height"]
+		cc.drawInlineImage(path, 30, height - (10 + hh), ww, hh)
+		offset += hh + 10
+
+	elif textArea["type"] == "link":
+		text = textArea["value"]
+		offset = writeSplittedText(cc, text, font, fontSize, startHor, endHor, startVert)
 		cc.linkURL(textArea["link"], (startHor, height - offset + fontSize, endHor, height - startVert + fontSize))
 
+	elif textArea["type"] == "list":
+		for elem in textArea["values"]:
+			elem["value"] = elem["value"]
+			offset = writeSplittedObject(cc, elem, font, fontSize, startHor, endHor, offset)
+
 	return offset
+
 
 def drawLeftSideBar(cc, width, color):
 	cc.setFillColor(color)
@@ -55,16 +81,16 @@ def writeSideBarText(cc, sideWidth, data):
 	paddingLeft = 20
 	paddingRight = 10
 
-	offset = 40
+	offset = 10
 	textFontSize = 11
 
 	for ii, elem in enumerate(data["cv"]["sideBar"]):
-		offset = writeSplittedText(cc, elem["title"], "Helvetica-Bold", 13, paddingLeft, sideWidth - paddingRight, offset)
+		offset = writeSplittedObject(cc, elem["title"], "Helvetica-Bold", 13, paddingLeft, sideWidth - paddingRight, offset)
 		offset += 8
 
 		for value in elem["values"]:
 			cc.setFont("Helvetica", 11)
-			offset = writeSplittedText(cc, value, "Helvetica", textFontSize, paddingLeft, sideWidth - paddingRight, offset)
+			offset = writeSplittedObject(cc, value, "Helvetica", textFontSize, paddingLeft, sideWidth - paddingRight, offset)
 			offset += 5
 		offset += 20
 
@@ -85,12 +111,12 @@ def writeDetails(cc, sidebarWidth, data, paddingLeft, paddingRight):
 	offset = nameFontSize + 20
 
 	# NAME
-	offset = writeSplittedText(cc, details["name"], nameFont, nameFontSize, sidebarWidth + paddingLeft, A4[0] - paddingRight, offset)
+	offset = writeSplittedObject(cc, details["name"], nameFont, nameFontSize, sidebarWidth + paddingLeft, A4[0] - paddingRight, offset)
 
 	offset -= 5
 
 	# PROFESSION
-	offset = writeSplittedText(cc, details["profession"], professionFont, professionFontSize, sidebarWidth + paddingLeft, A4[0] - paddingRight, offset)
+	offset = writeSplittedObject(cc, details["profession"], professionFont, professionFontSize, sidebarWidth + paddingLeft, A4[0] - paddingRight, offset)
 	
 	offset += 25
 	return offset
@@ -122,28 +148,30 @@ def drawBackgroundDetails(cc, sidebarWidth, data, paddingLeft, paddingRight, sta
 		cc.setFont(titleFont, titleFontSize)
 		# TITLE
 		# offset += 5
-		offset = writeSplittedText(cc, elem["title"], titleFont, titleFontSize, sidebarWidth + paddingLeft, pageWidth - paddingRight, offset)
+		offset = writeSplittedObject(cc, elem["title"], titleFont, titleFontSize, sidebarWidth + paddingLeft, pageWidth - paddingRight, offset)
 		# offset -= 13
 
 		for value in elem["values"]:
 			# PLACE
 			offset += 8
-			offset = writeSplittedText(cc, value["place"], placeFont, placeFontSize, sidebarWidth + paddingLeft, pageWidth - paddingRight, offset)
+			offset = writeSplittedObject(cc, value["place"], placeFont, placeFontSize, sidebarWidth + paddingLeft, pageWidth - paddingRight, offset)
 
 			# LABEL
-			offset = writeSplittedText(cc, value["label"], labelFont, labelFontSize, sidebarWidth + paddingLeft, pageWidth - paddingRight, offset)
+			offset = writeSplittedObject(cc, value["label"], labelFont, labelFontSize, sidebarWidth + paddingLeft, pageWidth - paddingRight, offset)
 			
 			# TIME
-			offset = writeSplittedText(cc, value["duration"], timeFont, timeFontSize, sidebarWidth + paddingLeft, pageWidth - paddingRight, offset)
+			if len(value["duration"]["value"]) != 0:
+				# print(value["place"]["value"], len(value["duration"]["value"]))
+				offset = writeSplittedObject(cc, value["duration"], timeFont, timeFontSize, sidebarWidth + paddingLeft, pageWidth - paddingRight, offset)
+				offset += 8
 			# time = "(" + value["start"] + " - " + value["end"] + ")"
 			# labelSplitted = getStringWithCorrectWidth(time, timeFontSize, sidebarWidth + paddingLeft, pageWidth - paddingRight, timeFont)
 			# for line in labelSplitted:
 				# cc.drawString(sidebarWidth + paddingLeft, pageHeight - offset - timeFontSize, line)
 				# offset += timeFontSize + 5
 
-			offset += 8
 			# DESCRIPTION
-			offset = writeSplittedText(cc, value["description"], descFont, descFontSize, sidebarWidth + paddingLeft, pageWidth - paddingRight, offset)
+			offset = writeSplittedObject(cc, value["description"], descFont, descFontSize, sidebarWidth + paddingLeft, pageWidth - paddingRight, offset)
 
 			offset += 10
 		offset += 20
