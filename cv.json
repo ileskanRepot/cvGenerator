@@ -1,13 +1,11 @@
 {
 	"cv": {
 		"sideBar": [
-			{ "title": { "width": 140, "height": 186,"path": "./facePic.jpeg", "type": "image" },"values":[]},
 			{ "title": { "value": "Contact", "type": "text" },
 				"values": [
 					{ "value": "akseli.leino@aalto.fi", "type": "text" },
 					{ "value": "akseli@ileska.fi", "type": "text" },
-					{ "value": "linkedin.com/in/ileska", "type": "link", "link": "https://www.linkedin.com/in/ileska/" },
-					{ "value": "+358 40 9333 705", "type": "text" }
+					{ "value": "linkedin.com/in/ileska", "type": "link", "link": "https://www.linkedin.com/in/ileska/" }
 				]
 			},
 			{ "title": { "value": "Links", "type": "text" },
