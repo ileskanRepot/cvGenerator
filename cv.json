@@ -1,6 +1,7 @@
 {
 	"cv": {
 		"sideBar": [
+			{ "title": { "width": 140, "height": 186,"path": "./facePic.jpeg", "type": "image" },"values":[]},
 			{ "title": { "value": "Contact", "type": "text" },
 				"values": [
 					{ "value": "akseli.leino@aalto.fi", "type": "text" },
