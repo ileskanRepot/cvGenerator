@@ -4,8 +4,11 @@ from reportlab.lib import colors
 from reportlab.pdfbase.pdfmetrics import stringWidth
 from reportlab.graphics import shapes
 
+import sys
 import json
 import os
+
+MSG = "EMPTYMSG"
 
 def getStringWithCorrectWidth(string, size, startW, endW, font):
 	wholeWidtn = stringWidth(string, font, size)
@@ -60,7 +63,7 @@ def writeSplittedObject(cc, textArea, font, fontSize, startHor, endHor, startVer
 	elif textArea["type"] == "link":
 		text = textArea["value"]
 		offset = writeSplittedText(cc, text, font, fontSize, startHor, endHor, startVert)
-		cc.linkURL(textArea["link"], (startHor, height - offset + fontSize, endHor, height - startVert + fontSize))
+		cc.linkURL(f'https://links.ileska.fi/?nextURL={textArea["link"]}&msg={MSG}', (startHor, height - offset + fontSize, endHor, height - startVert + fontSize))
 
 	elif textArea["type"] == "list":
 		for elem in textArea["values"]:
@@ -186,7 +189,7 @@ def drawMainPage(cc, sidebarWidth, data):
 	offset = drawBackgroundDetails(cc, sidebarWidth, data, paddingLeft, paddingRight, offset)
 
 def createPdf(data):
-	cc = canvas.Canvas("cvGenerated.pdf", pagesize=A4)
+	cc = canvas.Canvas("CV_AKSELI_LEINO.pdf", pagesize=A4)
 	cc.setTitle("My CV")
 
 	sidebarWidth = 200
@@ -207,4 +210,6 @@ def readJson(fname):
 	return data
 
 if __name__ == "__main__":
+	if len(sys.argv) >= 2:
+		MSG = sys.argv[1]
 	createPdf(readJson("cv.json"))
