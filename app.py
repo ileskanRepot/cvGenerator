@@ -3,10 +3,12 @@ from reportlab.lib.pagesizes import letter, A4
 from reportlab.lib import colors
 from reportlab.pdfbase.pdfmetrics import stringWidth
 from reportlab.graphics import shapes
+from requests import get
 
 import sys
 import json
 import os
+
 
 MSG = "EMPTYMSG"
 
@@ -16,7 +18,7 @@ def getStringWithCorrectWidth(string, size, startW, endW, font):
 		return [string]
 	
 	oneChar = stringWidth("M", font, size)
-	splittedStr = string.split(" ")
+	splittedStr = string
 	ret = []
 	curLine = splittedStr[0]
 
@@ -24,7 +26,7 @@ def getStringWithCorrectWidth(string, size, startW, endW, font):
 		if stringWidth(word + curLine, font, size) > endW - startW:
 			ret.append(curLine)
 			curLine = ""
-		curLine += " "
+		curLine += ""
 		curLine += word
 	ret.append(curLine)
 
@@ -120,7 +122,7 @@ def writeDetails(cc, sidebarWidth, data, paddingLeft, paddingRight):
 
 	# PROFESSION
 	offset = writeSplittedObject(cc, details["profession"], professionFont, professionFontSize, sidebarWidth + paddingLeft, A4[0] - paddingRight, offset)
-	
+
 	offset += 25
 	return offset
 
@@ -146,7 +148,7 @@ def drawBackgroundDetails(cc, sidebarWidth, data, paddingLeft, paddingRight, sta
 	pageWidth = A4[0]
 
 	offset = startOffset
-	
+
 	for elem in backgroundDetails:
 		cc.setFont(titleFont, titleFontSize)
 		# TITLE
@@ -161,17 +163,12 @@ def drawBackgroundDetails(cc, sidebarWidth, data, paddingLeft, paddingRight, sta
 
 			# LABEL
 			offset = writeSplittedObject(cc, value["label"], labelFont, labelFontSize, sidebarWidth + paddingLeft, pageWidth - paddingRight, offset)
-			
+
 			# TIME
 			if len(value["duration"]["value"]) != 0:
 				# print(value["place"]["value"], len(value["duration"]["value"]))
 				offset = writeSplittedObject(cc, value["duration"], timeFont, timeFontSize, sidebarWidth + paddingLeft, pageWidth - paddingRight, offset)
 				offset += 8
-			# time = "(" + value["start"] + " - " + value["end"] + ")"
-			# labelSplitted = getStringWithCorrectWidth(time, timeFontSize, sidebarWidth + paddingLeft, pageWidth - paddingRight, timeFont)
-			# for line in labelSplitted:
-				# cc.drawString(sidebarWidth + paddingLeft, pageHeight - offset - timeFontSize, line)
-				# offset += timeFontSize + 5
 
 			# DESCRIPTION
 			offset = writeSplittedObject(cc, value["description"], descFont, descFontSize, sidebarWidth + paddingLeft, pageWidth - paddingRight, offset)
@@ -179,6 +176,20 @@ def drawBackgroundDetails(cc, sidebarWidth, data, paddingLeft, paddingRight, sta
 			offset += 10
 		offset += 20
 
+def drawLotTextOneline(cc, text, start, yy):
+	fontSize = 1
+	stringSplitted = getStringWithCorrectWidth(text, fontSize, start, A4[0], "Helvetica")
+	cc.setFont("Helvetica", fontSize)
+	for line in stringSplitted:
+		cc.drawString(start, yy, line)
+def fetchRandomText():
+	with open("tech_buzzwords.csv", "r") as ff:
+		ret = ff.read()
+	return ret
+def drawRandomText(cc):
+	cc.setFillColor(colors.white)
+	textToWrite = fetchRandomText()
+	drawLotTextOneline(cc, textToWrite, 200, 1)
 
 def drawMainPage(cc, sidebarWidth, data):
 	cc.setFillColor(colors.black)
@@ -196,11 +207,11 @@ def createPdf(data):
 
 	width, height = A4
 
-	# drawLeftSideBar(cc, sidebarWidth, colors.darkslategray)
+	drawRandomText(cc)
 	drawLeftSideBar(cc, sidebarWidth, colors.purple)
 	writeSideBarText(cc, sidebarWidth, data)
 	drawMainPage(cc, sidebarWidth, data)
-	
+
 	cc.save()
 
 def readJson(fname):

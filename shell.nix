@@ -3,8 +3,9 @@
     nativeBuildInputs = let
       env = pyPkgs : with pyPkgs; [
         reportlab
+        requests
       ];
     in with pkgs; [
-      (python311.withPackages env)
+      (python39.withPackages env)
     ];
 }
