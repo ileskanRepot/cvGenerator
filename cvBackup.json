@@ -6,7 +6,8 @@
 				"values": [
 					{ "value": "akseli.leino@aalto.fi", "type": "text" },
 					{ "value": "akseli@ileska.fi", "type": "text" },
-					{ "value": "linkedin.com/in/ileska", "type": "link", "link": "https://www.linkedin.com/in/ileska/" }
+					{ "value": "linkedin.com/in/ileska", "type": "link", "link": "https://www.linkedin.com/in/ileska/" },
+					{ "value": "+358 40 9333 705", "type": "text" }
 				]
 			},
 			{ "title": { "value": "Links", "type": "text" },
@@ -55,12 +56,6 @@
 				{ "title": { "value": "Experience", "type": "text" },
 					"values": [
 						{ 
-							"place": { "value": "7sense", "type": "text" },
-							"label": { "value": "Software Developer", "type": "text" },
-							"description": { "value": "Software/hardware developer in a startup", "type": "text" },
-							"duration": { "value": "(Dec. 2024 - Current)", "type": "text" }
-						},
-						{ 
 							"place": { "value": "RELEX Solutions", "type": "text" },
 							"label": { "value": "Software Developer", "type": "text" },
 							"description": { "value": "Backend programming in Haskell and studying API password managing.", "type": "text" },
@@ -92,12 +87,6 @@
 				},
 				{ "title": { "value": "Recreational", "type": "text" },
 					"values": [
-						{
-							"place": { "value": "Radiodiodi", "type": "text" },
-							"label": { "value": "Technical manager", "type": "text" },
-							"description": { "value": "Radiodiodi from Otaniemi is student driven radiostation and I am responsible for our web infrastructure", "type": "text" },
-							"duration": { "value": "(Oct. 2024 - Apr. 2025)", "type": "text" }
-						},
 						{
 							"place": { "value": "Aalto University Automation and Systematics Guild", "type": "text" },
 							"label": { "value": "Tinkering committee member", "type": "text" },
